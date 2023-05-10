@@ -3,6 +3,9 @@
 *.d.ts
 node_modules
 
+# ensure lambdas are discoverable by git as .js files are ignored by projects created with `cdk init`
+!lambda/*.js
+
 # CDK asset staging directory
 .cdk.staging
 cdk.out
