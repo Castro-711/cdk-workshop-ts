@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/original-cdk-workshop.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/cdk-workshop.ts",
   "watch": {
     "include": [
       "**"
@@ -8,7 +8,6 @@
       "README.md",
       "cdk*.json",
       "**/*.d.ts",
-      "**/*.js",
       "tsconfig.json",
       "package*.json",
       "yarn.lock",

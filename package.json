@@ -1,8 +1,8 @@
 {
-  "name": "original-cdk-workshop",
+  "name": "cdk-workshop",
   "version": "0.1.0",
   "bin": {
-    "original-cdk-workshop": "bin/original-cdk-workshop.js"
+    "cdk-workshop": "bin/cdk-workshop.js"
   },
   "scripts": {
     "build": "tsc",
@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "aws-cdk-lib": "2.78.0",
-    "constructs": "^10.0.0"
+    "constructs": "^10.1.300"
   }
 }
