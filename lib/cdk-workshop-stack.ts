@@ -9,10 +9,13 @@ export class CdkWorkshopStack extends cdk.Stack {
 
     // defines AWS Lambda resource
     const hello = new lambda.Function(this, 'HelloHandler', {
+      functionName: "helloFuction",
       runtime: lambda.Runtime.NODEJS_16_X,    // execution env
       code: lambda.Code.fromAsset('lambda'),  // code loaded from "lambda" dir
       handler: 'hello.handler'                // file is "hello", function is "handler"
     })
+
+    console.log(hello.functionName)
 
     const helloWithCounter = new HitCounter(this, 'HelloHitCounter', {
       downstream: hello

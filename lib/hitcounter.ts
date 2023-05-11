@@ -25,7 +25,7 @@ export class HitCounter extends Construct {
     public readonly handler: lambda.Function;
 
     constructor(scope: Construct, id: string, props: HitCounterProps) {
-        super(scope, id)
+        super(scope, id);
 
         const table = new dynamodb.Table(this, 'Hits', {
             partitionKey: { name: 'path', type: dynamodb.AttributeType.STRING }
@@ -43,6 +43,9 @@ export class HitCounter extends Construct {
 
         // grant the lambda role read/write permissions to our table
         table.grantReadWriteData(this.handler);
+
+        // grant the lambda role invoke permissions to the downstream function
+        props.downstream.grantInvoke(this.handler);
     }
 
     /**
